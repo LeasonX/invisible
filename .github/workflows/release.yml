@@ -24,10 +24,12 @@ jobs:
         include:
           - name: macOS
             os: macos-latest
-            target: dmg
+            target: mac
+            artifact: dmg
           - name: Windows
             os: windows-latest
-            target: nsis
+            target: win
+            artifact: exe
 
     steps:
       - name: Checkout
@@ -42,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build ${{ matrix.target }}
+      - name: Build ${{ matrix.name }} package
         run: npx electron-builder --${{ matrix.target }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,9 +55,9 @@ jobs:
           mkdir -p dist-artifacts
           if [ "${{ matrix.os }}" = "macos-latest" ]; then
             cp release/*.dmg dist-artifacts/ 2>/dev/null || true
+            cp release/*.blockmap dist-artifacts/ 2>/dev/null || true
           else
             cp release/*.exe dist-artifacts/ 2>/dev/null || true
-            cp release/*.blockmap dist-artifacts/ 2>/dev/null || true
           fi
           ls -lh dist-artifacts/
 
