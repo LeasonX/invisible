@@ -43,12 +43,10 @@ if (status) {
 }
 
 const branch = git('rev-parse', '--abbrev-ref', 'HEAD')
-if (branch === 'main' && git('remote', 'origin', 'get-url', 'origin')) {
-  const upstream = git('rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}').catch(() => '')
-  if (upstream && upstream !== 'origin/main') {
-    console.error(`当前分支未跟踪 origin/main，请先同步`)
-    process.exit(1)
-  }
+const upstream = git('rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}').catch(() => '')
+if (branch !== upstream && upstream) {
+  console.error(`当前分支 ${branch} 未跟踪 ${upstream}，请先同步后再发版`)
+  process.exit(1)
 }
 
 // 2. 确定目标版本
