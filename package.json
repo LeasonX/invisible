@@ -1,6 +1,6 @@
 {
   "name": "unvisible",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unvisible - a screen-aware overlay that keeps its own window out of screenshots and screen recordings.",
   "main": "src/main.js",
   "private": true,
