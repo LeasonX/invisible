@@ -101,7 +101,17 @@ run('git', ['tag', tag, '-m', `unvisible v${next}`])
 
 // 5. 推送
 run('git', ['push', 'origin', branch])
-run('git', ['push', 'origin', tag])
+// SSH 在传输完成后偶尔会断开并返回非零码，先确认远程是否真的拿到了
+try {
+  run('git', ['push', 'origin', tag])
+} catch (e) {
+  const remoteTags = git('ls-remote', '--tags', 'origin').split('\n')
+  const pushed = remoteTags.some(line => line.includes('refs/tags/' + tag))
+  if (!pushed) {
+    throw e
+  }
+  console.log('（连接中断，但 tag 已成功推送到远程）')
+}
 
 console.log(`\n已推送 tag ${tag}`)
 console.log('GitHub Actions 将自动构建 macOS / Windows 安装包并创建 Release：')
