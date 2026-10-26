@@ -11,7 +11,8 @@
     "dev": "electron . --dev",
     "build": "electron-builder --dir",
     "dist": "electron-builder",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "release": "node scripts/release.js"
   },
   "author": "leason",
   "license": "MIT",
