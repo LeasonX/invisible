@@ -284,8 +284,8 @@ function loadPromptIntoEditor() {
 function fillAppearancePanel(settings) {
   el('theme').value = settings.appearance.theme || 'dark'
   el('accentColor').value = settings.appearance.accentColor || '#4f8cff'
-  el('opacity').value = settings.appearance.opacity ?? 0.9
-  el('opacityValue').textContent = Number(settings.appearance.opacity ?? 0.9).toFixed(2)
+  el('opacity').value = settings.appearance.opacity ?? 0.8
+  el('opacityValue').textContent = Number(settings.appearance.opacity ?? 0.8).toFixed(2)
   el('fontFamily').value = settings.appearance.fontFamily || 'system'
   el('fontSize').value = settings.appearance.fontSize ?? 15
   el('fontSizeValue').textContent = `${settings.appearance.fontSize ?? 15}px`

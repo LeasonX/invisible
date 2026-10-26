@@ -70,7 +70,7 @@ const DEFAULT_SETTINGS = {
   appearance: {
     theme: 'dark',
     accentColor: '#4f8cff',
-    opacity: 0.9,
+    opacity: 0.8,
     fontFamily: 'system',
     fontSize: 15,
     previewMode: 'markdown',

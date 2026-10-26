@@ -178,7 +178,7 @@ function createSettingsWindow() {
   settings.setAlwaysOnTop(true, 'floating', 1)
   // 透明度与主窗口保持一致
   const appearance = state().appearance
-  settings.setOpacity(Math.min(1, Math.max(0.2, Number(appearance.opacity || 0.9))))
+  settings.setOpacity(Math.min(1, Math.max(0.2, Number(appearance.opacity || 0.8))))
   settings.loadFile(path.join(__dirname, 'settings', 'index.html'))
   settings.once('ready-to-show', () => settings.showInactive())
   settings.on('closed', () => {
@@ -202,7 +202,7 @@ function applyAppearance(win, appearance) {
 
 function applyOverlayAppearance(win, appearance) {
   win.setAlwaysOnTop(appearance.alwaysOnTop !== false, 'floating', 1)
-  win.setOpacity(Math.min(1, Math.max(0.2, Number(appearance.opacity || 0.9))))
+  win.setOpacity(Math.min(1, Math.max(0.2, Number(appearance.opacity || 0.8))))
   win.setContentProtection(appearance.contentProtection !== false)
   win.setSkipTaskbar(appearance.hideFromTaskbar !== false)
   win.setFocusable(false)
@@ -222,7 +222,7 @@ function applySettingsAppearance(win, appearance) {
     return
   }
   win.setAlwaysOnTop(true, 'floating', 1)
-  win.setOpacity(Math.min(1, Math.max(0.2, Number(appearance.opacity || 0.9))))
+  win.setOpacity(Math.min(1, Math.max(0.2, Number(appearance.opacity || 0.8))))
   win.setContentProtection(appearance.contentProtection !== false)
   win.setFocusable(false)
 }
