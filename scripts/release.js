@@ -43,7 +43,12 @@ if (status) {
 }
 
 const branch = git('rev-parse', '--abbrev-ref', 'HEAD')
-const upstream = git('rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}').catch(() => '')
+let upstream = ''
+try {
+  upstream = git('rev-parse', '--abbrev-ref', '--symbolic-full-name', '@{u}')
+} catch (e) {
+  upstream = ''
+}
 if (branch !== upstream && upstream) {
   console.error(`当前分支 ${branch} 未跟踪 ${upstream}，请先同步后再发版`)
   process.exit(1)
