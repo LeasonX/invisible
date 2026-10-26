@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="sl-theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>unvisible 设置</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "@floating-ui/utils/dom": "./vendor/modules/@floating-ui/utils/dom/floating-ui.utils.dom.esm.js",
+        "@floating-ui/utils": "./vendor/modules/@floating-ui/utils/dist/floating-ui.utils.mjs",
+        "lit": "./vendor/modules/lit/index.js",
+        "lit-html": "./vendor/modules/lit-html/lit-html.js",
+        "lit-element": "./vendor/modules/lit-element/index.js",
+        "@lit/reactive-element": "./vendor/modules/@lit/reactive-element/reactive-element.js",
+        "@lit-labs/ssr-dom-shim": "./vendor/modules/@lit-labs/ssr-dom-shim/index.js",
+        "@floating-ui/dom": "./vendor/modules/@floating-ui/dom/dist/floating-ui.dom.mjs",
+        "@floating-ui/core": "./vendor/modules/@floating-ui/core/dist/floating-ui.core.mjs",
+        "@ctrl/tinycolor": "./vendor/modules/@ctrl/tinycolor/dist/module/public_api.js",
+        "@shoelace-style/animations": "./vendor/modules/@shoelace-style/animations/dist/index.js",
+        "@shoelace-style/localize": "./vendor/modules/@shoelace-style/localize/dist/index.js",
+        "composed-offset-position": "./vendor/modules/composed-offset-position/dist/composed-offset-position.browser.mjs",
+        "lit/decorators.js": "./vendor/modules/lit/decorators.js",
+        "lit/directives/class-map.js": "./vendor/modules/lit/directives/class-map.js",
+        "lit/directives/style-map.js": "./vendor/modules/lit/directives/style-map.js",
+        "lit/static-html.js": "./vendor/modules/lit/static-html.js",
+        "lit/directives/if-defined.js": "./vendor/modules/lit/directives/if-defined.js",
+        "lit/directives/map.js": "./vendor/modules/lit/directives/map.js",
+        "lit/directives/range.js": "./vendor/modules/lit/directives/range.js",
+        "lit/directives/unsafe-html.js": "./vendor/modules/lit/directives/unsafe-html.js",
+        "lit/directives/live.js": "./vendor/modules/lit/directives/live.js",
+        "lit/directives/when.js": "./vendor/modules/lit/directives/when.js",
+        "lit/directive-helpers.js": "./vendor/modules/lit/directive-helpers.js",
+        "lit/directives/ref.js": "./vendor/modules/lit/directives/ref.js",
+        "lit-html/async-directive.js": "./vendor/modules/lit-html/async-directive.js",
+        "@lit/reactive-element/decorators/custom-element.js": "./vendor/modules/@lit/reactive-element/decorators/custom-element.js",
+        "@lit/reactive-element/decorators/event-options.js": "./vendor/modules/@lit/reactive-element/decorators/event-options.js",
+        "@lit/reactive-element/decorators/property.js": "./vendor/modules/@lit/reactive-element/decorators/property.js",
+        "@lit/reactive-element/decorators/query-all.js": "./vendor/modules/@lit/reactive-element/decorators/query-all.js",
+        "@lit/reactive-element/decorators/query-assigned-elements.js": "./vendor/modules/@lit/reactive-element/decorators/query-assigned-elements.js",
+        "@lit/reactive-element/decorators/query-assigned-nodes.js": "./vendor/modules/@lit/reactive-element/decorators/query-assigned-nodes.js",
+        "@lit/reactive-element/decorators/query-async.js": "./vendor/modules/@lit/reactive-element/decorators/query-async.js",
+        "@lit/reactive-element/decorators/query.js": "./vendor/modules/@lit/reactive-element/decorators/query.js",
+        "@lit/reactive-element/decorators/state.js": "./vendor/modules/@lit/reactive-element/decorators/state.js",
+        "lit-html/directive-helpers.js": "./vendor/modules/lit-html/directive-helpers.js",
+        "lit-html/directive.js": "./vendor/modules/lit-html/directive.js",
+        "lit-html/directives/async-append.js": "./vendor/modules/lit-html/directives/async-append.js",
+        "lit-html/directives/async-replace.js": "./vendor/modules/lit-html/directives/async-replace.js",
+        "lit-html/directives/cache.js": "./vendor/modules/lit-html/directives/cache.js",
+        "lit-html/directives/choose.js": "./vendor/modules/lit-html/directives/choose.js",
+        "lit-html/directives/class-map.js": "./vendor/modules/lit-html/directives/class-map.js",
+        "lit-html/directives/guard.js": "./vendor/modules/lit-html/directives/guard.js",
+        "lit-html/directives/if-defined.js": "./vendor/modules/lit-html/directives/if-defined.js",
+        "lit-html/directives/join.js": "./vendor/modules/lit-html/directives/join.js",
+        "lit-html/directives/keyed.js": "./vendor/modules/lit-html/directives/keyed.js",
+        "lit-html/directives/live.js": "./vendor/modules/lit-html/directives/live.js",
+        "lit-html/directives/map.js": "./vendor/modules/lit-html/directives/map.js",
+        "lit-html/directives/range.js": "./vendor/modules/lit-html/directives/range.js",
+        "lit-html/directives/ref.js": "./vendor/modules/lit-html/directives/ref.js",
+        "lit-html/directives/repeat.js": "./vendor/modules/lit-html/directives/repeat.js",
+        "lit-html/directives/style-map.js": "./vendor/modules/lit-html/directives/style-map.js",
+        "lit-html/directives/template-content.js": "./vendor/modules/lit-html/directives/template-content.js",
+        "lit-html/directives/unsafe-html.js": "./vendor/modules/lit-html/directives/unsafe-html.js",
+        "lit-html/directives/unsafe-mathml.js": "./vendor/modules/lit-html/directives/unsafe-mathml.js",
+        "lit-html/directives/unsafe-svg.js": "./vendor/modules/lit-html/directives/unsafe-svg.js",
+        "lit-html/directives/until.js": "./vendor/modules/lit-html/directives/until.js",
+        "lit-html/directives/when.js": "./vendor/modules/lit-html/directives/when.js",
+        "lit-element/lit-element.js": "./vendor/modules/lit-element/lit-element.js",
+        "lit-html/is-server.js": "./vendor/modules/lit-html/is-server.js",
+        "lit-html/static.js": "./vendor/modules/lit-html/static.js"
+      }
+    }
+  </script>
+  <script type="module" src="shoelace-loader.js"></script>
+  <link rel="stylesheet" href="vendor/themes/dark.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="page">
+    <aside class="side">
+      <div class="side-head">
+        <span class="traffic-gap"></span>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="side-foot">
+        <sl-button size="small" variant="default" id="btn-export">导出配置</sl-button>
+        <sl-button size="small" variant="default" id="btn-import">导入配置</sl-button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="main-head drag-region">
+        <div class="title-row">
+          <span class="mark"></span>
+          <div class="title-text">
+            <h1 id="page-title">模型</h1>
+            <p id="page-desc">配置视觉与文本模型服务</p>
+          </div>
+        </div>
+      </header>
+      <div class="scroll" id="scroll">
+        <section class="panel" data-panel="model">
+          <div class="field">
+            <label for="baseUrl">接口地址</label>
+            <sl-input id="baseUrl" type="text" placeholder="https://dashscope.aliyuncs.com/compatible-mode/v1"></sl-input>
+            <p class="hint">任何 OpenAI 兼容的 /chat/completions 服务</p>
+          </div>
+          <div class="field">
+            <label for="apiKey">API Key</label>
+            <sl-input id="apiKey" type="password" placeholder="sk-..."></sl-input>
+            <p class="hint">保存在系统钥匙串，导出配置时默认脱敏</p>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="visionModel">视觉模型</label>
+              <sl-input id="visionModel" type="text" placeholder=""></sl-input>
+            </div>
+            <div class="field">
+              <label for="textModel">文本模型</label>
+              <sl-input id="textModel" type="text" placeholder=""></sl-input>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="field">
+              <label for="timeout">超时 (ms)</label>
+              <sl-input id="timeout" type="number" min="1000" step="1000"></sl-input>
+            </div>
+            <div class="field">
+              <label for="temperature">温度</label>
+              <sl-input id="temperature" type="number" min="0" max="2" step="0.1"></sl-input>
+            </div>
+            <div class="field">
+              <label for="maxTokens">最大 token</label>
+              <sl-input id="maxTokens" type="number" min="1" step="1"></sl-input>
+            </div>
+          </div>
+          <div class="row"><span>流式输出</span><sl-switch id="stream"></sl-switch></div>
+        </section>
+
+        <section class="panel" data-panel="oss" hidden>
+          <div class="row"><span>启用 OSS 上传</span><sl-switch id="ossEnabled"></sl-switch></div>
+          <p class="hint block">关闭时截图以 Data URL 直接随请求发送；开启后先上传到 OSS 再传签名地址</p>
+          <div class="grid-2">
+            <div class="field">
+              <label for="ossRegion">Region</label>
+              <sl-input id="ossRegion" type="text" placeholder="oss-cn-beijing"></sl-input>
+            </div>
+            <div class="field">
+              <label for="ossBucket">Bucket</label>
+              <sl-input id="ossBucket" type="text" placeholder=""></sl-input>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ossEndpoint">Endpoint</label>
+            <sl-input id="ossEndpoint" type="text" placeholder="留空则按 region 生成"></sl-input>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="ossAk">AccessKeyId</label>
+              <sl-input id="ossAk" type="text" placeholder=""></sl-input>
+            </div>
+            <div class="field">
+              <label for="ossSk">AccessKeySecret</label>
+              <sl-input id="ossSk" type="password" placeholder=""></sl-input>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="ossPrefix">对象前缀</label>
+              <sl-input id="ossPrefix" type="text" placeholder=""></sl-input>
+            </div>
+            <div class="field">
+              <label for="ossExpiry">签名有效期 (秒)</label>
+              <sl-input id="ossExpiry" type="number" min="60" step="60"></sl-input>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="prompt" hidden>
+          <div class="field">
+            <label for="activePrompt">当前提示词</label>
+            <sl-select id="activePrompt" value=""></sl-select>
+          </div>
+          <div class="list" id="promptList"></div>
+          <div class="row-between">
+            <sl-button size="small" variant="default" id="btn-add-prompt">新建提示词</sl-button>
+            <sl-button size="small" variant="danger" id="btn-del-prompt">删除当前</sl-button>
+          </div>
+          <div class="editor" id="promptEditor" hidden>
+            <div class="field">
+              <label for="promptName">名称</label>
+              <sl-input id="promptName" type="text" placeholder=""></sl-input>
+            </div>
+            <div class="field">
+              <label for="promptSystem">System 提示</label>
+              <sl-textarea id="promptSystem" rows="2"></sl-textarea>
+            </div>
+            <div class="field">
+              <label for="promptTemplate">用户提示模板</label>
+              <sl-textarea id="promptTemplate" rows="6"></sl-textarea>
+              <p class="hint">用 <code>{变量名}</code> 引用下方变量，内置 <code>{date}</code> <code>{time}</code> <code>{model}</code></p>
+            </div>
+            <div class="field">
+              <label>模板变量</label>
+              <div class="var-list" id="variableList"></div>
+              <div class="row-between var-actions">
+                <button class="ghost-btn" id="btn-add-var" type="button">新增变量</button>
+                <span class="hint" id="varCount"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="promptFormat">输出格式</label>
+              <sl-select id="promptFormat" value="markdown">
+                <sl-option value="markdown">Markdown</sl-option>
+                <sl-option value="text">纯文本</sl-option>
+              </sl-select>
+            </div>
+            <div class="row"><span>附带截图</span><sl-switch id="includeImage"></sl-switch></div>
+            <div class="field">
+              <label for="extraContext">额外上下文</label>
+              <sl-textarea id="extraContext" rows="3" placeholder="每次请求都会附加的内容"></sl-textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="appearance" hidden>
+          <div class="grid-2">
+            <div class="field">
+              <label for="theme">主题</label>
+              <sl-select id="theme" value="dark">
+                <sl-option value="dark">深色</sl-option>
+                <sl-option value="light">浅色</sl-option>
+              </sl-select>
+            </div>
+            <div class="field">
+              <label for="accentColor">主题色</label>
+              <sl-color-picker id="accentColor" value="#4f8cff"></sl-color-picker>
+            </div>
+          </div>
+          <div class="field">
+            <label for="opacity">窗口透明度 <span class="value" id="opacityValue"></span></label>
+            <sl-range id="opacity" min="0.2" max="1" step="0.05"></sl-range>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="fontFamily">字体</label>
+              <sl-select id="fontFamily" value="system">
+                <sl-option value="system">系统无衬线</sl-option>
+                <sl-option value="rounded">圆润</sl-option>
+                <sl-option value="serif">衬线</sl-option>
+                <sl-option value="mono">等宽</sl-option>
+              </sl-select>
+            </div>
+            <div class="field">
+              <label for="fontSize">字号 <span class="value" id="fontSizeValue"></span></label>
+              <sl-input id="fontSize" type="number" min="11" max="24" step="1"></sl-input>
+            </div>
+          </div>
+          <div class="field">
+            <label for="previewMode">预览模式</label>
+            <sl-select id="previewMode" value="markdown">
+              <sl-option value="markdown">Markdown</sl-option>
+              <sl-option value="text">纯文本</sl-option>
+            </sl-select>
+          </div>
+          <div class="row"><span>显示工具栏</span><sl-switch id="showToolbar"></sl-switch></div>
+          <div class="row"><span>阻止窗口被截图 / 录屏捕获</span><sl-switch id="contentProtection"></sl-switch></div>
+          <div class="row"><span>窗口置顶</span><sl-switch id="alwaysOnTop"></sl-switch></div>
+          <div class="row"><span>隐藏任务栏图标</span><sl-switch id="hideFromTaskbar"></sl-switch></div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="winWidth">窗口宽度</label>
+              <sl-input id="winWidth" type="number" min="280" step="10"></sl-input>
+            </div>
+            <div class="field">
+              <label for="winHeight">窗口高度</label>
+              <sl-input id="winHeight" type="number" min="240" step="10"></sl-input>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="winX">窗口 X 坐标</label>
+              <sl-input id="winX" type="number" step="10"></sl-input>
+            </div>
+            <div class="field">
+              <label for="winY">窗口 Y 坐标</label>
+              <sl-input id="winY" type="number" step="10"></sl-input>
+            </div>
+          </div>
+          <p class="hint block">窗口大小与位置会自动记忆，也可以在这里直接修改</p>
+        </section>
+
+        <section class="panel" data-panel="shortcuts" hidden>
+          <div class="list" id="shortcutList"></div>
+          <p class="hint block" id="shortcutHint">点击录制，按下新的组合键完成绑定</p>
+        </section>
+
+        <section class="panel" data-panel="proxy" hidden>
+          <div class="row"><span>启用代理</span><sl-switch id="proxyEnabled"></sl-switch></div>
+          <div class="grid-3">
+            <div class="field">
+              <label for="proxyType">类型</label>
+              <sl-select id="proxyType" value="http">
+                <sl-option value="http">HTTP</sl-option>
+                <sl-option value="socks5">SOCKS5</sl-option>
+                <sl-option value="socks5h">SOCKS5H</sl-option>
+              </sl-select>
+            </div>
+            <div class="field">
+              <label for="proxyHost">主机</label>
+              <sl-input id="proxyHost" type="text" placeholder="127.0.0.1"></sl-input>
+            </div>
+            <div class="field">
+              <label for="proxyPort">端口</label>
+              <sl-input id="proxyPort" type="number" min="1" max="65535"></sl-input>
+            </div>
+          </div>
+          <div class="field">
+            <label for="proxyBypass">绕过地址</label>
+            <sl-input id="proxyBypass" type="text" placeholder="localhost,127.0.0.1"></sl-input>
+          </div>
+        </section>
+
+        <section class="panel" data-panel="history" hidden>
+          <div class="history-toolbar">
+            <sl-input id="historySearch" type="text" placeholder="搜索提示词、模型或响应内容"></sl-input>
+            <sl-select id="historyFilter" value="all" small>
+              <sl-option value="all">全部</sl-option>
+              <sl-option value="success">成功</sl-option>
+              <sl-option value="error">失败</sl-option>
+            </sl-select>
+          </div>
+          <div class="history-meta">
+            <span id="historyStats">共 0 条记录</span>
+            <div class="row-between">
+              <div class="row small"><span>记录历史</span><sl-switch id="historyEnabled"></sl-switch></div>
+              <sl-button size="small" variant="danger" id="btn-clear-history">清空历史</sl-button>
+            </div>
+          </div>
+          <div class="list" id="historyList"></div>
+          <div class="empty-history" id="historyEmpty" hidden>
+            <p>还没有任何请求记录</p>
+          </div>
+        </section>
+      </div>
+      <footer class="main-foot">
+        <span class="saved" id="saved" hidden>已保存</span>
+        <sl-button variant="primary" id="btn-save">保存</sl-button>
+      </footer>
+    </main>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

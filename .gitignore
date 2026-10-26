@@ -1,0 +1,7 @@
+node_modules/
+# Shoelace 组件由 npm run vendor 生成
+src/settings/vendor/
+release/
+dist/
+.DS_Store
+*.log

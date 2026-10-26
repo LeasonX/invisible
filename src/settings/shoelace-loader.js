@@ -1,0 +1,11 @@
+// 引入项目使用的 Shoelace 组件（Lit + Web Components，无需框架）
+import './vendor/components/select/select.js'
+import './vendor/components/option/option.js'
+import './vendor/components/input/input.js'
+import './vendor/components/textarea/textarea.js'
+import './vendor/components/switch/switch.js'
+import './vendor/components/color-picker/color-picker.js'
+import './vendor/components/range/range.js'
+import './vendor/components/button/button.js'
+import './vendor/components/icon/icon.js'
+import './vendor/components/spinner/spinner.js'
