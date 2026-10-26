@@ -43,17 +43,35 @@
       "target": [
         "dmg"
       ],
-      "category": "public.app-category.developer-tools"
+      "category": "public.app-category.developer-tools",
+      "icon": "assets/icon.icns",
+      "darkModeSupport": true,
+      "extendInfo": {
+        "NSScreenCaptureUsageDescription": "需要截取屏幕内容以交给模型处理，结果仅显示在本应用窗口内。",
+        "NSAccessibilityUsageDescription": "需要辅助功能权限以提供全局快捷键。"
+      }
     },
     "win": {
       "target": [
         "nsis"
-      ]
+      ],
+      "icon": "assets/icon.ico",
+      "artifactName": "${productName}-${version}-${arch}-setup.${ext}"
     },
     "linux": {
       "target": [
         "AppImage"
-      ]
-    }
+      ],
+      "icon": "assets/icon.png",
+      "category": "Development"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "unvisible"
+    },
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
   }
 }
