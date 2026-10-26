@@ -49,7 +49,9 @@ try {
 } catch (e) {
   upstream = ''
 }
-if (branch !== upstream && upstream) {
+// upstream 形如 origin/main，只比较分支名部分
+const upstreamBranch = upstream.replace(/^[^/]+\//, '')
+if (upstream && upstreamBranch !== branch) {
   console.error(`当前分支 ${branch} 未跟踪 ${upstream}，请先同步后再发版`)
   process.exit(1)
 }
