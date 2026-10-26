@@ -36,6 +36,20 @@ npm run dist
 
 产物输出到 `release/`。
 
+## 发版
+
+推 tag 会触发 GitHub Actions 自动构建 macOS (dmg) 与 Windows (nsis) 安装包，并创建 Release：
+
+```bash
+npm run release          # patch: 0.1.1 -> 0.1.2
+npm run release -- minor # minor: 0.1.1 -> 0.2.0
+npm run release -- major # major: 0.1.1 -> 1.0.0
+npm run release -- 0.2.0 # 指定版本
+```
+
+脚本会依次完成：检查工作区干净 → 更新 `package.json` 版本号 → 提交 → 打 tag → 推送到远程。
+推送 tag 后约 2-3 分钟可在 [Releases](https://github.com/LeasonX/invisible/releases) 看到产物。
+
 ## 首次使用
 
 1. 启动后按 `Command+,` 打开设置。
